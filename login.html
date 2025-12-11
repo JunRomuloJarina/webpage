@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #ffffff;
+        margin: 0;
+        padding: 0;
+      }
+
+      label,
+      input,
+      button,
+      form {
+        font-family: inherit;
+        letter-spacing: 0.5px;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        font-size: 14px;
+      }
+
+      input[type="submit"],
+      input[type="reset"] {
+        font-size: 15px;
+        font-weight: 500;
+      }
+      .register:hover,
+      input[type="text"]:hover,
+      input[type="password"]:hover,
+      input[type="submit"]:hover,
+      input[type="reset"]:hover {
+        background-color: #ffffff;
+        transform: scale(1.01, 1.01);
+      }
+
+      .login-container {
+        display: grid;
+        place-items: center;
+        height: 500px;
+      }
+
+      .login-form {
+        width: 500px;
+        height: 300px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 10px rgb(199, 197, 197);
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+        height: 20px;
+        border: none;
+        border-bottom: 1px solid black;
+        outline: none;
+      }
+
+      input[type="text"] {
+        margin-top: 10px;
+      }
+
+      input[type="submit"] {
+        margin-left: 140px;
+      }
+
+      input[type="reset"] {
+        margin-left: 20px;
+      }
+
+      input[type="submit"],
+      input[type="reset"] {
+        margin-top: 20px;
+        width: 100px;
+        height: 30px;
+        border-radius: 10px;
+        border: 1px solid rgb(199, 197, 197);
+      }
+
+      .username {
+        margin-top: 50px;
+      }
+
+      .password {
+        margin-top: 20px;
+      }
+
+      label {
+        display: inline-block;
+        margin-left: 165px;
+      }
+
+      .register-link {
+        position: relative;
+        top: -1px;
+        margin-top: 15px;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      .register {
+        border: none;
+        background-color: inherit;
+      }
+
+      .register:hover {
+        border-bottom: 2px solid black;
+      }
+
+      .login-label {
+        margin-left: 190px;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+        25% {
+          transform: translate(30px, -40px) scale(1.1);
+        }
+        50% {
+          transform: translate(-20px, 30px) scale(0.95);
+        }
+        75% {
+          transform: translate(40px, 20px) scale(1.05);
+        }
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      @keyframes change-color {
+        0% {
+          background-color: aqua;
+        }
+        25% {
+          background-color: chartreuse;
+        }
+        50% {
+          background-color: blue;
+        }
+        75% {
+          background-color: red;
+          background-color: aquamarine;
+        }
+        100% {
+          background-color: indigo;
+        }
+      }
+
+      .circle,
+      .circle-2,
+      .circle-3,
+      .circle-4,
+      .circle-5 {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        position: fixed;
+        filter: blur(40px);
+        opacity: 0.45;
+        animation: float 9s infinite ease-in-out;
+      }
+
+      .circle,
+      .circle-2,
+      .circle-3,
+      .circle-4,
+      .circle-5 {
+        animation: change-color 5s infinite ease-in-out;
+      }
+
+      .circle {
+        background: rgb(156, 107, 255);
+        left: -80px;
+        top: 20px;
+        animation-duration: 10s;
+      }
+
+      .circle-2 {
+        background: rgb(255, 143, 143);
+        left: 1200px;
+        top: 40px;
+        animation-duration: 12s;
+        animation-delay: 1s;
+      }
+
+      .circle-3 {
+        background: rgb(98, 182, 255);
+        left: 500px;
+        top: -120px;
+        animation-duration: 14s;
+        animation-delay: 0.5s;
+      }
+
+      .circle-4 {
+        background: rgb(255, 110, 176);
+        left: 1100px;
+        bottom: -150px;
+        animation-duration: 11s;
+        animation-delay: 1.3s;
+      }
+
+      .circle-5 {
+        background: rgb(176, 255, 132);
+        left: 150px;
+        bottom: -40px;
+        animation-duration: 13s;
+        animation-delay: 0.7s;
+      }
+
+      .register-form {
+        width: 500px;
+        height: 400px;
+        background-color: #ffffff;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 1px 1px 10px rgb(199, 197, 197);
+        display: none;
+      }
+
+      .reg-label {
+        padding-top: 20px;
+        margin-left: 160px;
+      }
+
+      .reg-password,
+      .reg-email,
+      .reg-username {
+        margin-top: 20px;
+      }
+
+      .reg-create {
+        margin-top: 30px;
+        margin-left: 40px;
+        width: 100px;
+        height: 30px;
+        border-radius: 10px;
+        border: 1px solid rgb(199, 197, 197);
+        position: relative;
+        left: 150px;
+      }
+
+      .reg-create:hover {
+        background-color: #ffffff;
+        transform: scale(1.01, 1.01);
+      }
+      .reg-back {
+        margin-top: 20px;
+        width: 300px;
+        height: 30px;
+        background-color: #ffffff;
+        border: none;
+        position: relative;
+        bottom: -40px;
+        left: -40px;
+      }
+
+      .reg-back:hover {
+        border-bottom: 2px solid black;
+        transform: scale(1.01, 1.01);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="circle"></div>
+    <div class="circle-2"></div>
+    <div class="circle-3"></div>
+    <div class="circle-4"></div>
+    <div class="circle-5"></div>
+    <div class="login-container">
+      <div class="register-container">
+        <form class="register-form" id="register-form">
+          <h3 class="reg-label">Create Account</h3>
+          <label for="reg-username" class="reg-username">Username</label>
+          <input
+            type="text"
+            class="reg-username"
+            id="reg-username"
+            placeholder="username"
+          />
+          <label for="reg-password" class="reg-password">Password</label>
+          <input
+            type="text"
+            class="reg-password"
+            id="reg-password"
+            placeholder="Password"
+          />
+          <label for="reg-email" class="reg-email">Email</label>
+          <input
+            type="text"
+            name="reg-email"
+            id="reg-email"
+            placeholder="@Email"
+          />
+          <button class="reg-create" id="reg-create">Create</button>
+          <button class="reg-back" id="reg-back">
+            Already have account - Login
+          </button>
+        </form>
+      </div>
+      <form class="login-form" id="login-form">
+        <h3 class="login-label">Login User</h3>
+        <label for="username" class="username">Username</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          required
+          maxlength="50"
+          placeholder="username@gmail.com"
+        />
+        <label for="password" class="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          required
+          maxlength="50"
+          placeholder="example.pass.com"
+        />
+        <input type="submit" value="Login" />
+        <input type="reset" value="Clear" />
+        <p class="register-link">
+          Don't have an account?
+          <button id="register" class="register" onclick="showCreateAccount()">
+            Register
+          </button>
+        </p>
+      </form>
+    </div>
+    <script src="login.js"></script>
+  </body>
+</html>

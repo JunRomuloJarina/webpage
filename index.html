@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      header {
+        width: 100%;
+        padding: 15px 20px;
+        box-shadow: 1px 1px 10px #c8bdbd;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 22px;
+        font-weight: bold;
+        transition: 1s;
+      }
+
+      .logo:hover {
+        transform: rotate(360deg);
+      }
+
+      .button-container {
+        list-style-type: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      .button-container li a {
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+      }
+
+      .button-container li {
+        border-radius: 10px;
+        text-align: center;
+        height: 50px;
+        width: 100px;
+        padding-top: 15px;
+        margin-left: 20px;
+      }
+
+      .button-container li:hover {
+        box-shadow: inset -5px -3px 2px rgb(138, 148, 157);
+        border-top: 1px solid rgb(138, 148, 157);
+        border-left: 1px solid rgb(138, 148, 157);
+        transition: ease-in-out 0.2s;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+      }
+
+      .hamburger div {
+        width: 28px;
+        height: 3px;
+        background-color: black;
+      }
+
+      @media (max-width: 768px) {
+        .button-container {
+          position: absolute;
+          top: 80px;
+          right: 20px;
+          background: aliceblue;
+          width: 200px;
+          flex-direction: column;
+          gap: 15px;
+          padding: 20px;
+          display: none;
+          border-radius: 8px;
+        }
+
+        .button-container.show {
+          display: flex;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+      }
+
+      .intro-banner {
+        font-family: "Poppins", sans-serif;
+
+        background-color: rgb(138, 148, 157);
+        color: white;
+        width: 100%;
+        text-align: center;
+        display: inline-block;
+        white-space: nowrap;
+        position: relative;
+        animation: slideLeft 10s linear infinite;
+      }
+
+      .intro-banner:hover {
+        animation-play-state: paused;
+      }
+
+      @keyframes slideLeft {
+        0% {
+          transform: translateX(100vw);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      .intro-page {
+        margin-left: 15%;
+      }
+
+      .intro-page-title {
+        font-size: 100px;
+        padding-left: 50px;
+      }
+
+      .intro-page-title {
+        text-shadow: 4px 7px 6px rgb(138, 148, 157);
+      }
+
+      .intro-page-tagline {
+        font-size: 30px;
+        margin-top: 40px;
+        margin-left: 200px;
+        text-shadow: 4px 7px 10px rgb(138, 148, 157);
+      }
+
+      .buynow-btn,
+      .freetaste-btn {
+        display: inline-block;
+        font-family: "Poppins", sans-serif;
+        text-decoration: none;
+        color: rgb(52, 50, 50);
+        border: 1px solid gray;
+        padding: 20px;
+        border-radius: 20px;
+        transition: ease-in-out 0.3s;
+        box-shadow: inset -5px -3px 2px rgb(138, 148, 157);
+      }
+
+      .buynow-btn {
+        margin-left: 200px;
+      }
+
+      .freetaste-btn {
+        margin-left: 50px;
+      }
+
+      .buynow-btn:hover,
+      .freetaste-btn:hover {
+        background-color: #e3dede;
+        color: rgb(9, 8, 8);
+      }
+
+      .cupcake1 {
+        border-radius: 10px;
+        box-shadow: 10px 10px 10px rgb(138, 148, 157);
+        border-top: 2px solid rgb(138, 148, 157);
+        border-left: 2px solid rgb(138, 148, 157);
+        position: relative;
+        right: -300px;
+        top: -200px;
+
+        animation: floating 2s ease-in-out infinite;
+      }
+
+      @media (max-width: 768px) {
+        .cupcake1 {
+          right: 0;
+          top: 20px;
+          width: 200px;
+        }
+
+        .intro-page-title {
+          font-size: 50px;
+        }
+
+        .intro-page-tagline {
+          margin-left: 20px;
+        }
+
+        .buynow-btn,
+        .freetaste-btn {
+          margin-left: 20px;
+        }
+      }
+
+      @keyframes floating {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .cupcake1 {
+        width: 350px;
+      }
+
+      .product-page {
+        margin-top: 100px;
+      }
+
+      .product-title {
+        font-size: 100px;
+        padding-left: 50px;
+        text-shadow: 4px 7px 6px rgb(138, 148, 157);
+      }
+
+      .product-text {
+        font-size: 30px;
+        padding-left: 50px;
+        text-shadow: 4px 7px 10px rgb(138, 148, 157);
+      }
+
+      div img {
+        width: 290px;
+      }
+
+      .product-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin: 50px;
+      }
+
+      .image-container {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px #c8bdbd;
+        text-align: center;
+      }
+
+      .add-to-cart-btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 12px 18px;
+        border-radius: 10px;
+        border: 1px solid gray;
+        background-color: white;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.2s ease-in-out;
+        box-shadow: inset -3px -3px 2px rgb(138, 148, 157);
+        font-family: "Poppins", sans-serif;
+      }
+
+      .add-to-cart-btn:hover {
+        background-color: #e3dede;
+      }
+
+      #cartPanel {
+        position: fixed;
+        width: 220px;
+        max-height: 400px;
+        overflow-y: auto;
+        background: white;
+        box-shadow: 0px 0px 10px gray;
+        border-radius: 10px;
+        padding: 20px;
+        display: none;
+        z-index: 1000;
+      }
+
+      .image-container:hover {
+        transform: scale(1.01, 1.01);
+      }
+
+      .site-footer {
+        background-color: #222;
+        color: #fff;
+        padding: 30px 20px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .footer-left h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .footer-left p {
+        font-size: 14px;
+        color: #ccc;
+      }
+
+      .footer-right h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .footer-right ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-right ul li {
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+
+      @media (max-width: 768px) {
+        .footer-container {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <h3 class="logo">KapKik ni Angkol</h3>
+
+        <div class="hamburger" onclick="toggleMenu()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <ul class="button-container" id="nav-menu">
+          <li><a href="#intro-page" class="home-btn">Home</a></li>
+          <li><a href="#product-page" class="product-btn">Products</a></li>
+          <li><a href="#" class="cart-btn" id="cart-btn">Cart</a></li>
+          <li>
+            <a href="/login.html" target="_self" class="login-btn">Login</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <span class="intro-banner" id="intro-banner">#1 Global kapkik</span>
+    <main>
+      <section class="intro-page" id="intro-page">
+        <h1 class="intro-page-title">
+          THE BEST <br />PLACE TO <br />
+          EAT KAPKIK.
+        </h1>
+        <p class="intro-page-tagline">Sarap na Hahanap-hapanpin.</p>
+        <a href="#product-page" class="buynow-btn" id="buynow-btn">Buy Now</a>
+        <a href="#" class="freetaste-btn" id="freetaste-btn">Free Taste</a>
+        <img src="image/cupcake01.jpg" alt="cupcake1" class="cupcake1" />
+      </section>
+      <section class="product-page" id="product-page">
+        <h2 class="product-title">Discover the Taste of KapKik ni Angkol.</h2>
+        <p class="product-text">
+          Every product is crafted to bring you the perfect crunch and flavor in
+          every bite. <br />
+          Check out our delicious selections below!
+        </p>
+        <div class="product-container">
+          <div class="image-container">
+            <img src="image/cupcake02.jpg" alt="cupcake02" />
+            <p class="product-name">Blue Dragon Kapkik</p>
+            <p class="product-price">&dollar;200</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+
+          <div class="image-container">
+            <img src="image/cupcake03.jpg" alt="cupcake03" />
+            <p class="product-name">Ultra Vanilla</p>
+            <p class="product-price">&dollar;90</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+
+          <div class="image-container">
+            <img src="image/cupcake04.jpg" alt="cupcake04" />
+            <p class="product-name">Ice Slash Kapkik</p>
+            <p class="product-price">&dollar;70</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+
+          <div class="image-container">
+            <img src="image/cupcake05.jpg" alt="cupcake05" />
+            <p class="product-name">Pink Kapkik</p>
+            <p class="product-price">&dollar;50</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+
+          <div class="image-container">
+            <img src="image/cupcake06.jpg" alt="cupcake06" />
+            <p class="product-name">Super Pink Kapkik</p>
+            <p class="product-price">&dollar;60</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+      </section>
+
+      <div id="cartPanel">
+        <h3>Your Cart</h3>
+        <ul id="cartList"></ul>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <h3>KapKik ni Angkol</h3>
+          <p>&copy; 2025 Jun Romulo Jarina Website</p>
+        </div>
+        <div class="footer-right">
+          <h4>Members</h4>
+          <ul>
+            <li>Jun Romulo Jarina</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
