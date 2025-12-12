@@ -58,8 +58,9 @@ loginForm.addEventListener("submit", function (e) {
   if (user) {
     alert("Login successful! Welcome " + username);
 
-    window.location.href = "/index.html";
+    window.location.href = "index.html";
   } else {
     alert("Invalid username or password!");
   }
 });
+
